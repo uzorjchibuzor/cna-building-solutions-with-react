@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { loadData } from "../data/ActionCreators";
+import { loadData, placeOrder } from "../data/ActionCreators";
 import { DataTypes } from "../data/Types";
 import { Shop } from "./Shop";
 import {
@@ -12,6 +12,8 @@ import {
 } from "../data/CartActionCreators";
 import { CartDetails } from "./CartDetails";
 import { DataGetter } from "../data/DataGetter";
+import { Checkout } from "./Checkout";
+import { Thanks } from "./Thanks";
 
 const mapStateToProps = dataStore => ({
   ...dataStore
@@ -21,12 +23,10 @@ const mapDispatchToProps = {
   addToCart,
   updateCartQuantity,
   removeFromCart,
-  clearCart
+  clearCart,
+  placeOrder
 };
-// const filterProducts = (products = [], category) =>
-//   !category || category === "All"
-//     ? products
-//     : products.filter(p => p.category.toLowerCase() === category.toLowerCase());
+
 export const ShopConnector = connect(
   mapStateToProps,
   mapDispatchToProps
@@ -43,7 +43,7 @@ export const ShopConnector = connect(
           <Route
             path="/shop/products/:category/:page"
             render={routeProps => (
-              <DataGetter { ...this.props } { ...routeProps }>
+              <DataGetter {...this.props} {...routeProps}>
                 <Shop {...this.props} {...routeProps} />
               </DataGetter>
             )}
@@ -54,13 +54,20 @@ export const ShopConnector = connect(
               <CartDetails {...this.props} {...routeProps} />
             )}
           />
+          <Route
+            path="/shop/checkout"
+            render={routeProps => <Checkout {...this.props} {...routeProps} />}
+          />
+          <Route
+            path="/shop/thanks"
+            render={routeProps => <Thanks { ...this.props } { ...routeProps } />}
+          />
           <Redirect to="/shop/products/all/1" />
         </Switch>
       );
     }
     componentDidMount() {
       this.props.loadData(DataTypes.CATEGORIES);
-      // this.props.loadData(DataTypes.PRODUCTS);
     }
   }
 );
