@@ -35,7 +35,7 @@ export default () => {
                 </li>
                 <li>
                   <Link to="/about" rel="noopener noreferrer">
-                    About
+                    About Us
                   </Link>
                 </li>
                 <li className="dropdown">
@@ -93,12 +93,12 @@ export default () => {
                 </li>
                 <li>
                   <Link to="/solar-hub">
-                    Solar Hub
+                    SolarHub
                   </Link>
                 </li>
                 <li>
                   <Link to="/portfolio">
-                    Portfolio
+                    Our Portfolio
                   </Link>
                 </li>
               </ul>
