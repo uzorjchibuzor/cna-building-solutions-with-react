@@ -1,35 +1,21 @@
-import React, { Component, lazy, Suspense } from "react";
-import { SportsStoreDataStore } from "./data/DataStore";
-import { Provider } from "react-redux";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect
-} from "react-router-dom";
-import { ShopConnector } from "./shop/ShopConnector";
-import { AuthProviderImpl } from "./auth/AuthProviderImpl"
-
-const Admin = lazy(() => import("./admin/Admin"))
-
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Header from "./Header"
+import Footer from "./Footer"
+import Home from "./Home";
+import About from "./About"
 export default class App extends Component {
   render() {
-    return (
-      <Provider store={SportsStoreDataStore}>
-        <AuthProviderImpl>
-          <Router>
-            <Switch>
-              <Route path="/shop" component={ ShopConnector } />
-              <Route path="/admin" render={
-                routeProps => <Suspense fallback={ <h3>Loading...</h3> }>
-                  <Admin { ...routeProps } />
-                </Suspense>
-              } />
-              <Redirect to="/shop" />
-            </Switch>
-          </Router>
-        </AuthProviderImpl>
-      </Provider>
+    return ( <div>
+      <Header />
+      <Router>
+        <Switch>
+          <Route path="/" component={Home} />} />
+          <Route path="/about-us" component={Home} />} />
+        </Switch>
+      </Router>
+      <Footer />
+      </div>
     );
   }
 }
