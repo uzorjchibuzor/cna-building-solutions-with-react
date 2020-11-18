@@ -1,1 +1,1 @@
-Online shopping app designed with React.
+Static web site designed for CNA Building Solutions
