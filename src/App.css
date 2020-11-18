@@ -115,8 +115,8 @@ h1.display-4 + p{
   text-align: center;
 }
 
-.dropdown-item {
-  font-size: 14px;
+a.dropdown-item {
+  font-size: 14px !important;
   text-shadow: none;
 
 }
