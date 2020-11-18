@@ -1,5 +1,5 @@
 {
-  "name": "online-store",
+  "name": "cna building solutions",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -18,9 +18,8 @@
     "redux": "^4.0.1"
   },
   "scripts": {
-    "start": "npm-run-all --parallel reactstart webservice",
+    "start": "npm-run-all --parallel reactstart",
     "reactstart": "react-scripts start",
-    "webservice": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

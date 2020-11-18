@@ -2,7 +2,6 @@ import React from "react";
 
 export default () => {
   return (
-    <React.Fragment>
       <section class="container main-body">
         <div class="des-image">
           <img src={process.env.PUBLIC_URL + "image-1.jpeg"} alt="about us" />
@@ -38,6 +37,5 @@ export default () => {
           smart, sustainable construction methodologies. 
         </p>
       </section>
-    </React.Fragment>
   );
 };

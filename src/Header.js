@@ -1,17 +1,19 @@
 import React from "react";
+import { Link, Route } from "react-router-dom";
 
 export default () => {
   return (
+    <Route>
     <div className="navbar nav-background navbar-fixed-top">
       <div className="container-fluid">
         <div className="navbar-header">
-          <a href="/">
+          <Link to="/">
             <img
               src={process.env.PUBLIC_URL + " new-logo.png"}
               alt="logo"
               className="logo"
             />
-          </a>
+          </Link>
           <button
             type="button"
             className="navbar-toggle toggler"
@@ -26,21 +28,20 @@ export default () => {
         <div className="collapse navbar-collapse" id="myNavbar">
           <ul className="nav navbar-nav navbar-right">
             <li>
-              {" "}
-              <a href="/">Home</a>
+              <Link to="/" rel="noopener noreferrer">Home</Link>
             </li>
             <li>
-              {" "}
-              <a href="#">About</a>{" "}
+              <Link to="/about" rel="noopener noreferrer">About</Link>
             </li>
             <li className="dropdown">
+            {/* eslint-disable-next-line */}
               <a
                 className="btn dropdown-toggle"
                 type="button"
                 id="dropdownMenuButton"
                 data-toggle="dropdown"
                 aria-haspopup="true"
-                aria-expanded="false"
+                aria-expanded="false" rel="noopener noreferrer"
               >
                 What We Do
               </a>
@@ -48,49 +49,50 @@ export default () => {
                 className="dropdown-menu"
                 aria-labelledby="dropdownMenuButton"
               >
-                <a href="#" className="dropdown-item">
+                <Link to="/general-contracting" className="dropdown-item">
                   General Contracting
-                </a>
+                </Link>
                 <hr />
-                <a href="#" className="dropdown-item">
-                  Bbuilding Construction
-                </a>
+                <Link to="/building-construction" className="dropdown-item">
+                  Building Construction
+                </Link>
 
                 <hr />
-                <a href="#" className="dropdown-item">
+                <Link to="/civil-engineering" className="dropdown-item">
                   Civil Engineering
-                </a>
+                </Link>
 
                 <hr />
-                <a href="#" className="dropdown-item">
+                <Link to="/property-development" className="dropdown-item" rel="noopener noreferrer">
                   Property Development
-                </a>
+                </Link>
                 <hr />
-                <a href="#" className="dropdown-item">
+                <Link to="/development-consultancy" className="dropdown-item" rel="noopener noreferrer">
                   Development Consultancy
-                </a>
+                </Link>
               </div>
             </li>
             <li>
-              {" "}
-              <a href="#" className="dropdown-item">
+
+              <Link to="/safety" className="dropdown-item">
                 Safety
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="dropdown-item">
+              <Link to="/solar-hub" className="dropdown-item">
                 Solar Hub
-              </a>
+              </Link>
             </li>
             <li>
-              {" "}
-              <a href="#" className="dropdown-item">
+              <Link to="/portfolio" className="dropdown-item">
                 Portfolio
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
       </div>
     </div>
+    </Route>
   );
+  
 };

@@ -11,19 +11,19 @@ export default () => {
         </p>
         <p>
           <i className="far fa-envelope"></i>{" "}
-          <a href="mailto:Info@cnanigerialtd.com">Info@cnanigerialtd.com</a> |{" "}
-          <a href="mailto:cnabuildingco@gmail.com">cnabuildingco@gmail.com</a>
+          <a href="mailto:Info@cnanigerialtd.com" rel="noopener noreferrer">Info@cnanigerialtd.com</a> |{" "}
+          <a href="mailto:cnabuildingco@gmail.com" rel="noopener noreferrer">cnabuildingco@gmail.com</a>
         </p>
         <p>
           <i className="fas fa-mobile-alt"></i>{" "}
-          <a href="tel:+2349060002718">+2349060002718</a>
+          <a href="tel:+2349060002718" rel="noopener noreferrer">+2349060002718</a>
         </p>
         <p>
-          <a href="https://www.facebook.com/cnabuilds" target="_blank">
+          <a href="https://www.facebook.com/cnabuilds" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-facebook"></i>
           </a>
 
-          <a href="https://www.instagram.com/cnabuilds" target="_blank">
+          <a href="https://www.instagram.com/cnabuilds" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-instagram"></i>
           </a>
         </p>
