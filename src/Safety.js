@@ -6,7 +6,7 @@ export default () => {
       <div class="des-image">
         <img
           src={process.env.PUBLIC_URL + "safety.jpeg"}
-          alt="Property Development Image"
+          alt="Safety Alternative"
         />
       </div>
 
